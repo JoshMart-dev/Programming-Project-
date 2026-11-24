@@ -1,0 +1,26 @@
+import math
+import enemy
+import player3
+import glasscannon
+
+glass_cannon = 0
+silver_rose = 1
+
+def userInterface (health, damage, current_mp):
+    glasscannon.glass_cannon_max_hp
+    player3.silver_rose_max_hp
+
+
+print("Who do you feel closest to? Are you strong & brittle, a technical strategist, or a protector of the masses?")
+player_Hero = int(input("Choose a Character: Glass Cannon (0), Silver Rose (1), Vanguard(2)"))
+if player_Hero == 0:
+    print("You have chosen Glass Cannon")
+elif player_Hero == 1:
+    print("You have chosen Silver Rose")
+elif player_Hero == 2:
+    print("You have chosen Vanguard")
+
+
+
+
+
