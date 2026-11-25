@@ -1,0 +1,41 @@
+import glass_cannon
+import silver_rose
+import vanguard
+
+inventory = {"Heal Potion": 1, "Elixir": 1}
+heal_potion = 10
+elixir = 25
+
+def use_item_heal(player_Hero):
+    player_item_choice = int(input("Choose your item: 1 for Heal Potion, 2 for Elixir: "))
+
+    if player_item_choice == 1:
+        item_name = "Heal Potion"
+        amount = heal_potion
+    elif player_item_choice == 2:
+        item_name = "Elixir"
+        amount = elixir
+    else:
+        print("Invalid item.")
+        return
+
+    if inventory[item_name] == 0:
+        print(f"You're out of {item_name}s!")
+        return
+
+    inventory[item_name] -= 1
+
+    if player_Hero == 0:
+        glass_cannon.glass_cannon_hp = min(
+            glass_cannon.glass_cannon_hp + amount, glass_cannon.glass_cannon_max_hp)
+        hp = glass_cannon.glass_cannon_hp
+    elif player_Hero == 1:
+        silver_rose.silver_rose_hp = min(
+            silver_rose.silver_rose_hp + amount, silver_rose.silver_rose_max_hp)
+        hp = silver_rose.silver_rose_hp
+    elif player_Hero == 2:
+        vanguard.vanguard_Hp = min(
+            vanguard.vanguard_Hp + amount, vanguard.vanguard_max_Hp)
+        hp = vanguard.vanguard_Hp
+
+    print(f"You used a {item_name} and healed {amount} HP! HP: {hp}")
