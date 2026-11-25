@@ -2,10 +2,11 @@ import math
 import enemy
 import silver_rose
 import glass_cannon
+import Vanguard
 
 glasscannon = 0
 silverrose = 1
-
+vanguard = 2
 def userInterface (health, damage, current_mp):
     glass_cannon.glass_cannon_max_hp
     silver_rose.silver_rose_max_hp
